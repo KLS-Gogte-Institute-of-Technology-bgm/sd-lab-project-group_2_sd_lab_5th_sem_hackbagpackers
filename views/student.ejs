@@ -1,0 +1,26 @@
+<%- include('partials/header') -%>
+<div class="container w-25 mt-2">
+  <%- include('partials/messages') -%>  
+  <style>
+    body {
+      font-family: "Lato", sans-serif;
+      transition: background-color .5s;
+    }
+    </style>
+    
+  <div class="row">
+    <% for (var i = 0; i < newLinks.length; i++) { %>
+    <div class="col-12">
+      <div class="card text-white bg-info mb-3">
+        <div class="card-header"><%= newLinks[i].course %></div>
+        <div class="card-body">
+          <h5 class="card-title"><%= newLinks[i].des %></h5>
+          <p class="card-text"><%= newLinks[i].date %></p>
+          <a href=<%= newLinks[i].link %> class="btn btn-primary">Open Link</a>
+        </div>
+      </div>
+    </div>
+    <% } %>
+  </div>
+</div>
+<%- include('partials/footer') -%>

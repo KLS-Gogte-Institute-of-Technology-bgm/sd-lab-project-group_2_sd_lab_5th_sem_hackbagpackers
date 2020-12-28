@@ -1,0 +1,21 @@
+<%- include('partials/header') -%>
+<h3 class="text-center mt-5 mb-3">Are you a?</h3>
+<div class="container w-25">
+    <%- include('partials/messages') -%>
+    <form action="/" method="POST">
+
+        <center>
+        <input type="radio" name="radio" value="student">
+        <label>Student</label><br>
+        <input type="radio" name="radio" value="teacher">
+        <label>Teacher</label><br>
+        </center>
+
+        <button type="submit" class="btn btn-primary btn-block">Continue</button>
+    </form>
+</div>
+
+
+</div>
+
+<%- include('partials/footer') -%>
