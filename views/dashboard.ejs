@@ -1,12 +1,22 @@
 <%- include('partials/header') -%>
+<style>
+    td {
+        width: 40px;
+    }
+</style>
 <div class="container mt-2">
     <%- include('partials/messages') -%>
-    <h1 class="text-center">Dashboard</h1><br>
+    <h1 class="text-center" style="color: cornflowerblue;">Dashboard</h1><br>
     <div class="row">
         <div class="col-9">
             
                     <% if(newLinks.length == 0){ %>
-                        <h1 style="color: coral;">No links are uploaded yet</h1>
+                        <!-- <h1 style="color: coral;">No links are uploaded yet</h1> -->
+                        <br><br>
+                        <div class="text-center mt-5">
+                        <i class="fa fa-5x fa-database" style="color: rgb(155, 155, 155);" aria-hidden="true"></i>
+                        <h3 style="color: rgb(155, 155, 155);">You list is empty!</h3>
+                    </div>
                     <% } %>
                     <% if(newLinks.length != 0) { %>
                         <table
@@ -15,7 +25,7 @@
             >
                 <thead>
                     <tr>
-                    <th scope="col">Link</th>
+                    <th scope="col" width="5%">Link</th>
                     <th scope="col">Description</th>
                     <th scope="col">course</th>
                     <th scope="col">Date</th>
@@ -24,7 +34,7 @@
                     </tr>
                     <% for (var i = 0; i < newLinks.length; i++) { %>
                         <tr>
-                          <td><%= newLinks[i].link %></td>
+                          <td><%= newLinks[i].link.substring(0,30) %></td>
                           <td><%= newLinks[i].des %></td>
                           <td><%= newLinks[i].course %></td>
                           <td><%= newLinks[i].date %></td>
